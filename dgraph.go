@@ -27,8 +27,7 @@ func NewSize(nodes int) *Graph {
 }
 
 // Add adds a node to the graph if it does not exist, extending the graph as
-// much as necessary to fit the node. Thus, this will add nodes as necessary
-// if the graph is too small.
+// much as necessary to fit the node.
 func (g *Graph) Add(node int) {
 	need := node + 1
 	if len(g.out) < need {
@@ -37,7 +36,8 @@ func (g *Graph) Add(node int) {
 	}
 }
 
-// Link adds an edge from src to dst, creating the nodes if they do not exist.
+// Link adds an edge from src to dst, creating the nodes if they do not exist
+// and extending the graph as much as necessary to fit those nodes.
 func (g *Graph) Link(src, dst int) {
 	if src > dst {
 		g.Add(src)
