@@ -32,12 +32,8 @@ func NewSize(nodes int) *Graph {
 func (g *Graph) Add(node int) {
 	need := node + 1
 	if len(g.out) < need {
-		new := make([][]int, need)
-		copy(new, g.out)
-		g.out = new
-		new = make([][]int, need)
-		copy(new, g.in)
-		g.in = new
+		g.out = append(g.out, make([][]int, need-len(g.out))...)
+		g.in = append(g.in, make([][]int, need-len(g.in))...)
 	}
 }
 
