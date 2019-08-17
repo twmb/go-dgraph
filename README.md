@@ -6,8 +6,8 @@ returning nodes and cycles in dependency order with the strongly connected
 components (Tarjan's) algorithm.
 
 The StrongComponents returns graph components in dependency order. If the graph
-has no cycles, each component will have a single element. Otherwise, all cycles
-are grouped into one "strong" component.
+has no cycles, each component will have a single element. Otherwise, all nodes
+in a cycle are grouped into one "strong" component.
 
 Documentation
 -------------
