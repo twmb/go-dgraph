@@ -52,37 +52,6 @@ func TestSCC(t *testing.T) {
 	}
 }
 
-func TestUnlink(t *testing.T) {
-	g := New()
-	g.Link(0, 1)
-	g.Link(1, 2)
-	g.Add(3)
-	g.Unlink(0, 1)
-
-	exp := New()
-	exp.Add(0)
-	exp.Link(1, 2)
-	exp.Add(3)
-
-	if !reflect.DeepEqual(g, exp) {
-		t.Error("got != exp")
-	}
-}
-
-func TestRemove(t *testing.T) {
-	g := New()
-	g.Link(0, 1)
-	g.Link(1, 2)
-	g.Remove(1)
-
-	exp := New()
-	exp.Add(0)
-	exp.Add(2)
-	if !reflect.DeepEqual(g, exp) {
-		t.Error("got != exp")
-	}
-}
-
 func BenchmarkSCC(b *testing.B) {
 	g := testgraph()
 	for i := 0; i < b.N; i++ {

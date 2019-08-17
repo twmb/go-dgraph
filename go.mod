@@ -1,3 +1,3 @@
-module github.com/twmb/go-scc
+module github.com/twmb/go-dgraph
 
 go 1.12
